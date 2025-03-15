@@ -30,4 +30,3 @@ EXPOSE 8080
 ENV PORT 8080
 ENV FLASK_ENV=production  
 CMD service mysql start && exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
-# ----------------------------------------------------- 

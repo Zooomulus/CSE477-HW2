@@ -7,8 +7,8 @@ services:
     container_name: hw2-container_flask-app
     # Indicates that `Dockerfile-dev` should be used for local instantiations
     build:
-        context: .
-        dockerfile: Dockerfile-dev
+      context: .
+      dockerfile: Dockerfile-dev
     stdin_open: true
     tty: true
     ports:
@@ -16,12 +16,3 @@ services:
     # Mounts the local directory to docker container as a volume.
     volumes:
       - .:/app
-      
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
-  interval: 30s
-  retries: 3
-  start_period: 10s
-  timeout: 10s
-
-  
