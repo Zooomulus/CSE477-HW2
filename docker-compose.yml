@@ -16,6 +16,12 @@ services:
     # Mounts the local directory to docker container as a volume.
     volumes:
       - .:/app
-
+      
+healthcheck:
+  test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+  interval: 30s
+  retries: 3
+  start_period: 10s
+  timeout: 10s
 
   
