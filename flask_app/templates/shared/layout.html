@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zoom's personal page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/feedback.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+  <article>
+    <!-- The header  -->
+    <header>
+      <img src="../static/main/images/banner.jpg" alt="Banner Image" loading="lazy">
+    </header>
+
+    <!-- The navigation bar -->
+    <nav>
+      <div class="container">
+        <h1><a href="{{ url_for('home') }}">CSE 477: Homework 2</a></h1>
+
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+
+        <ul id="nav-links">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('projects') }}">Projects</a></li>
+          <li><a href="{{ url_for('resume') }}">Resume</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/dung-zoom-nguyen3000/" target="_blank">
+              <img class="linkedin-icon" src="{{ url_for('static', filename='main/images/social-linkedin.png') }}"
+                alt="LinkedIn" loading="lazy">
+              <span class="linkedin-text">LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <div id="feedback-form-container" class="hidden">
+      <form id="feedback-form" action="{{ url_for('processfeedback') }}" method="POST">
+        <h2>Feedback</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required title="Enter your full name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required title="Enter a valid email address">
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+
+        <button type="submit">Submit</button>
+        <button type="button" onclick="toggleFeedbackForm()">Close</button>
+      </form>
+    </div>
+
+    <!-- The footer of the file -->
+    <footer>
+      <p>© 2025 Dung Nguyen</p>
+    </footer>
+
+  </article>
+
+  <!-- Feedback Button -->
+  <button id="feedback-btn" onclick="toggleFeedbackForm()">Give Feedback</button>
+
+</body>
+
+</html>

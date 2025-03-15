@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+</head>
+
+<body>
+
+    {% extends 'shared/layout.html' %}
+
+    {% block maincontent %}
+    <div class="intro-container">
+        <h1>My Projects</h1>
+        <p>This is my projects page. The first project I worked on is the Piano project. Please see below.</p>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-image">
+            <a href="piano.html">
+                <img src="{{ url_for('static', filename='main/images/piano.jpeg') }}" alt="Piano Project"
+                    loading="lazy">
+            </a>
+        </div>
+        <div class="profile-info">
+            <h2>Piano Project</h2>
+            <p>
+                This project allows you to play the virtual piano.
+                <br><br>
+                <a href="{{ url_for('piano') }}">Click here to play!</a>
+            </p>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="resume-container">
+    {# Loop through institutions in resume data #}
+    {% for inst_id, inst in resume_data.items() %}
+    <div class="institution-container">
+        <div class="institution">
+            <h2>{{ inst.name }}</h2>
+            <p class="institution-address">
+                {# Display institution address only if available #}
+                {{ inst.address if inst.address is not none else '' }},
+                {{ inst.city if inst.city is not none else '' }},
+                {{ inst.state if inst.state is not none else '' }}
+                {{ inst.zip if inst.zip is not none else '' }}
+            </p>
+        </div>
+
+        <div class="institution-details">
+            <p>{{ inst.type if inst.type is not none else '' }}</p>
+            <p>{{ inst.department if inst.department is not none else '' }}</p>
+        </div>
+
+        {% if inst.positions %}
+        {# Loop through positions within an institution #}
+        <div class="position-section">
+            {% for pos_id, pos in inst.positions.items() %}
+            <div class="position">
+                <h4>{{ pos.title if pos.title is not none else '' }}</h4>
+                <p class="position-date">
+                    {{ pos.start_date if pos.start_date is not none else '' }}
+                    {% if pos.end_date %} - {{ pos.end_date }} {% endif %}
+                </p>
+            </div>
+            <p>{{ pos.responsibilities if pos.responsibilities is not none else '' }}</p>
+
+            {% if pos.experiences %}
+            <div class="experience-section">
+                {# Loop through experiences associated with a position #}
+                {% for exp_id, exp in pos.experiences.items() %}
+                <div class="experience">
+                    {% if exp.hyperlink %}
+                    <a href="{{ exp.hyperlink }}" target="_blank">{{ exp.name if exp.name is not none else '' }}</a>
+                    {% else %}
+                    <p class="experience-name">{{ exp.name if exp.name is not none else '' }}</p>
+                    {% endif %}
+                    <p class="experience-description">{{ exp.description if exp.description is not none else '' }}</p>
+
+                    {% if exp.skills %}
+                    <div class="skills-section">
+                        <h6>Skills</h6>
+                        <ul class="skills-list">
+                            {% for skill in exp.skills.values() %}
+                            <li>{{ skill.name }} - Level {{ skill.skill_level if skill.skill_level is not none else
+                                'N/A' }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

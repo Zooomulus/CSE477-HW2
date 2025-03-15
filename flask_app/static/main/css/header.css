@@ -1,0 +1,25 @@
+:root {
+    --header-bg-color: #222;
+    --header-text-color: #fff;
+    --max-header-height: 100px;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: var(--max-header-height);
+    object-fit: cover;
+}

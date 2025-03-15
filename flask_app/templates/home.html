@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dung Nguyen's Profile</title>
+</head>
+
+<body>
+
+  {% extends 'shared/layout.html' %}
+
+  {% block maincontent %}
+  <div class="profile-container">
+    <div class="profile-image">
+      <img src="{{ url_for('static', filename='main/images/dungImage.png') }}" alt="My photo" loading="lazy">
+    </div>
+    <div class="profile-info">
+      <h1>Dung (Zoom) Nguyen</h1>
+      <p>
+        I am a passionate developer and problem solver. I love working on projects that challenge me
+        and expand my knowledge in software development. My interests include web development,
+        algorithms, and building interactive applications.<br>
+      </p>
+      <p>
+        <br>I currently attend Michigan State University (MSU) with a major in Computer Science.
+        I will be graduating with a bachelor's in May 2025. I initially wanted to be a computer
+        programmer because I wanted to build applications and work on cool projects.<br>
+      </p>
+      <p>
+        <br>I plan to go into the semiconductor industry and climb the corporate ladder.
+        At MSU, I am currently a helper at the Action Lab, working on the NVIDIA Isaac Sim on Omniverse.
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="fun-fact">
+    <h2>Fun Fact About Me</h2>
+    <p><strong>{{ fun_fact }}</strong></p>
+  </div>
+  {% endblock %}
+
+</body>
+
+</html>

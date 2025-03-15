@@ -1,0 +1,62 @@
+#feedback-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+#feedback-form-container {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background: #ffffff;
+    padding: 20px 30px 20px 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease-in-out;
+}
+
+#feedback-form-container.visible {
+    transform: scaleY(1);
+}
+
+#feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#feedback-form input,
+#feedback-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#feedback-form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#feedback-form button[type="button"] {
+    background-color: #dc3545;
+}

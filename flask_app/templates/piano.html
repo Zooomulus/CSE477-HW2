@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Project</title>
+    {% block extracss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='piano/css/piano.css') }}">
+    {% endblock %}
+</head>
+
+<body>
+
+    {% extends 'shared/layout.html' %}
+
+    {% block maincontent %}
+    <div class="poem-container">
+        <p>"Behold piano great and old, its master slumbers in far-off cold,<br>
+            If you wish to see anew, call out to it - we see you."
+        </p>
+    </div>
+
+    <div class="piano-container">
+        <h1>The Piano Project</h1>
+        <h2 class="piano-title">The Great Old One</h2>
+        <div class="piano" id="piano">
+            <div class="white-key key" id="w1" data-key="A"><span class="key-label">A</span></div>
+            <div class="white-key key" id="w2" data-key="S"><span class="key-label">S</span></div>
+            <div class="white-key key" id="w3" data-key="D"><span class="key-label">D</span></div>
+            <div class="white-key key" id="w4" data-key="F"><span class="key-label">F</span></div>
+            <div class="white-key key" id="w5" data-key="G"><span class="key-label">G</span></div>
+            <div class="white-key key" id="w6" data-key="H"><span class="key-label">H</span></div>
+            <div class="white-key key" id="w7" data-key="J"><span class="key-label">J</span></div>
+            <div class="white-key key" id="w8" data-key="K"><span class="key-label">K</span></div>
+            <div class="white-key key" id="w9" data-key="L"><span class="key-label">L</span></div>
+            <div class="white-key key" id="w10" data-key=";"><span class="key-label">;</span></div>
+            <div class="black-key key" id="b1" data-key="W"><span class="key-label">W</span></div>
+            <div class="black-key key" id="b2" data-key="E"><span class="key-label">E</span></div>
+            <div class="black-key key" id="b3" data-key="T"><span class="key-label">T</span></div>
+            <div class="black-key key" id="b4" data-key="Y"><span class="key-label">Y</span></div>
+            <div class="black-key key" id="b5" data-key="U"><span class="key-label">U</span></div>
+            <div class="black-key key" id="b6" data-key="O"><span class="key-label">O</span></div>
+            <div class="black-key key" id="b7" data-key="P"><span class="key-label">P</span></div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block extrajs %}
+    <script src="{{ url_for('static', filename='piano/js/piano.js') }}" defer></script>
+    {% endblock %}
+
+</body>
+
+</html>

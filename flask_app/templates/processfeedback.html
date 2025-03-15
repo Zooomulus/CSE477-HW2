@@ -1,0 +1,19 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<article>
+    <!-- All Feedback Section -->
+    <section>
+        <h3>All Feedback</h3>
+        <ul>
+            {% for feedback in feedback_data %}
+            <li>
+                <strong>Name:</strong> {{ feedback.name | e }}<br>
+                <strong>Email:</strong> {{ feedback.email | e }}<br>
+                <strong>Comment:</strong> {{ feedback.comment | e }}<br><br>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</article>
+{% endblock %}

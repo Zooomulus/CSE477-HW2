@@ -1,0 +1,137 @@
+.resume-container {
+    margin-top: 20px;
+    padding: 0 70px;
+}
+
+.institution-container {
+    margin-bottom: 20px;
+}
+
+.institution {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.institution h2 {
+    flex: 1;
+    text-align: left;
+    font-size: 1.5em;
+    color: #0056b3;
+}
+
+.institution-address {
+    flex: 1;
+    text-align: right;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.institution-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.institution-details p {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+    font-size: 1em;
+}
+
+.institution-details p:first-child {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.institution-details p:last-child {
+    text-align: right;
+    color: #27ae60;
+}
+
+.position-section {
+    margin-top: 10px;
+}
+
+.position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.position h4 {
+    flex: 1;
+    text-align: left;
+    font-size: 1.2em;
+    color: #2980b9;
+    margin: 0;
+}
+
+.position-date {
+    flex: 1;
+    text-align: right;
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+}
+
+.experience-section {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.experience-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.experience-name {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.experience-description {
+    margin-left: 20px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.skills-section h6 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.skills-list {
+    list-style-position: inside;
+}
+
+.skills-list li {
+    text-align: left;
+    padding-left: 5px;
+}
+
+@media (max-width: 768px) {
+
+    .institution,
+    .position {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .institution h2,
+    .position h4 {
+        font-size: 1.3em;
+    }
+
+    .institution-address,
+    .position-date {
+        font-size: 1em;
+    }
+}

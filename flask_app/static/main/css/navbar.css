@@ -1,0 +1,107 @@
+:root {
+    --light-yellow: #ffffe0;
+    --black-color: #000000;
+    --font-size-default: 18px;
+    --menu-icon-size: 30px;
+    --transition-duration: 0.3s;
+    --sticky-z-index: 1000;
+}
+
+nav {
+    background-color: var(--light-yellow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: var(--sticky-z-index);
+    width: 100%;
+    padding: 2% 0;
+}
+
+nav .container {
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 3%;
+}
+
+nav ul li a {
+    color: var(--black-color);
+    text-decoration: none;
+    font-size: var(--font-size-default);
+    transition: opacity var(--transition-duration) ease-in-out;
+}
+
+nav ul li a:hover {
+    opacity: 0.3;
+}
+
+.menu-icon {
+    display: none;
+    font-size: var(--menu-icon-size);
+    cursor: pointer;
+}
+
+.linkedin-icon {
+    display: inline-block;
+    width: 24px;
+    height: auto;
+}
+
+.linkedin-text {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--light-yellow);
+        width: 100%;
+        text-align: right;
+        padding: 1% 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 2% 5%;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .linkedin-icon {
+        display: none;
+    }
+
+    .linkedin-text {
+        display: inline;
+    }
+}
