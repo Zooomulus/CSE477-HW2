@@ -1,3 +1,3 @@
 "experience_id","position_id","name","description","start_date","end_date","hyperlink"
 "1","1","Renesas V4H debugging","Flashed the evaluation board and set up power measurement components","2024-06-03","2024-08-16",
-"2","2","Software Set up","Setting up NVIDIA Isaac Sim on Omniverse and NoMachine to connect to lab's server","2025-02-01",NULL,
+"2","2","Software Set up","Setting up NVIDIA Isaac Sim on Omniverse and NoMachine to connect to lab's server","2025-02-01",NULL,"https://gpus.aiactionlab.com/"
